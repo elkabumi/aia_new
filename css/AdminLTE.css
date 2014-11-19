@@ -2704,3 +2704,8 @@ Component: timeline
 	color:#fff;
 	font-weight:bold;
 }
+.field_note{
+	
+	font-style:italic;
+	color:#999;
+}

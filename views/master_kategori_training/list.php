@@ -65,10 +65,11 @@
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                            <th width="5%">No</th>
+                                            <th>No</th>
+                                            <th>Kode</th>
                                                
                                                 <th>Nama Kategori</th>
-                                               
+                                               <th>Deskripsi</th>
                                                 <th width="20%">Config</th>
                                             </tr>
                                         </thead>
@@ -79,8 +80,9 @@
                                             ?>
                                             <tr>
                                             <td><?= $no ?></td>
-                                                
+                                                <td><?= $row['training_category_code']?></td>
                                                 <td><?= $row['training_category_name']?></td>
+                                                <td><?= $row['training_category_description']?></td>
                                                
                                                 <td style="text-align:center;">
                                            <a href="master_kategori_training.php?page=form&id=<?= $row['training_category_id']?>" class="btn btn-danger" ><i class="fa fa-pencil"></i></a>
@@ -97,7 +99,7 @@
                                         </tbody>
                                           <tfoot>
                                             <tr>
-                                                <th colspan="4"><a href="<?= $add_button ?>" class="btn btn-danger " >Add</a></th>
+                                                <th colspan="5"><a href="<?= $add_button ?>" class="btn btn-danger " >Add</a></th>
                                               
                                             </tr>
                                         </tfoot>

@@ -45,13 +45,20 @@
                                 <div class="box-body">
                                     
                                         <!-- text input -->
+                                         <div class="form-group">
+                                            <label>Kode</label>
+                                              <input required type="text" name="i_code" class="form-control" placeholder="Enter ..." value="<?= $row->training_category_code ?>" readonly="readonly"/>
+                                        </div>
                                        
                                         <div class="form-group">
                                             <label>Nama</label>
                                               <input required type="hidden" name="i_code" class="form-control" placeholder="Enter ..." value="<?= $row->training_category_code ?>"/><input required type="text" name="i_name" class="form-control" placeholder="Enter ..." value="<?= $row->training_category_name ?>"/>
                                         </div>
 
-                                        <!-- textarea -->
+                                        <div class="form-group">
+                                            <label>Deskripsi</label>
+                                           <textarea class="form-control" name="i_description" rows="3" placeholder="Enter ..."><?= $row->training_category_description ?></textarea>
+                                        </div>
                   
                                       
                                    

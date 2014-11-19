@@ -3,7 +3,9 @@
 function select(){
 	$query = mysql_query("select a.*,b.*
 						 from training a
-						 JOIN training_category b ON a.training_category_id = b.training_category_id");
+						 JOIN training_category b ON a.training_category_id = b.training_category_id
+						 order by training_id
+						 ");
 	return $query;
 }
 

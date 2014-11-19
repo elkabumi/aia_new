@@ -36,8 +36,11 @@ switch ($page) {
 		} else{
 			
 			$row = new stdClass();
-			$row->training_category_code = false;
+			$get_code = get_training_category_code();
+			
+			$row->training_category_code = $get_code;
 			$row->training_category_name = false;
+			$row->training_category_description = false;
 			$action = "master_kategori_training.php?page=save";
 		}
 
@@ -51,10 +54,12 @@ switch ($page) {
 
 		$i_code = get_isset($i_code);
 		$i_name = get_isset($i_name);
+		$i_description = get_isset($i_description);
 
-		$data = "'','$i_code', '$i_name'";
+		$data = "'','$i_code', '$i_name', '$i_description'";
 
 		create($data);
+		edit_training_category_code();
 
 		header('Location: master_kategori_training.php?page=list&did=1');
 
@@ -67,9 +72,9 @@ switch ($page) {
 		$id = get_isset($_GET['id']);
 		$i_code = get_isset($i_code);
 		$i_name = get_isset($i_name);
+		$i_description = get_isset($i_description);
 
-		$data = " training_category_code = '$i_code', training_category_name = '$i_name'";
-
+		$data = " training_category_code = '$i_code', training_category_name = '$i_name', training_category_description = '$i_description'";
 		
 		update($data, $id);
 
