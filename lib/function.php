@@ -44,6 +44,11 @@ function edit_product_code(){
 	mysql_query("update counters set product_code = product_code + 1");
 }
 
+function month_name($data){
+	 $month_name = array("", "januari", "februari","maret","april","mei","juni","juli","agustus","september","oktober","november","desember");
+	 return $month_name[$data];
+}
+
 function new_date(){
 	$new_date = date("Y-m-d H:m:s");
 	return $new_date;

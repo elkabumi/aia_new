@@ -46,7 +46,7 @@
                                 <li><a href="master_agent.php?page=list"><i class="fa fa-chevron-circle-right"></i> Agent</a></li>
                              
                                 <li><a href="master_class_kota.php?page=list"><i class="fa fa-chevron-circle-right"></i> Class Kota</a></li>
-                                 <li><a href="master_rab.php?page=form"><i class="fa fa-chevron-circle-right"></i> RAB</a></li>
+                              
                                  
                              
                             </ul>
