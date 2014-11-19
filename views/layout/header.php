@@ -30,7 +30,8 @@ if(!$_SESSION['login']){
         <link href="../css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
         <!-- Bootstrap time Picker -->
         <link href="../css/timepicker/bootstrap-timepicker.min.css" rel="stylesheet"/>
-
+   	 <!-- datepicker -->
+       <link href="../css/datepicker/datepicker.css" rel="stylesheet">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -58,7 +59,9 @@ if(!$_SESSION['login']){
         <script src="../js/plugins/timepicker/bootstrap-timepicker.min.js" type="text/javascript"></script>
 		 <!-- AdminLTE App -->
         <script src="../js/AdminLTE/app.js" type="text/javascript"></script>
-       
+         <!-- Datepicker -->
+        <script src="../js/plugins/datepicker/bootstrap-datepicker.js"></script>
+		
 
     </head>
     <body class="skin-blue">

@@ -56,7 +56,26 @@
 				
 				//Date range picker
                 $('#reservation').daterangepicker();
-                
+                	//date picker
+					
+				$('#date_picker1').datepicker({
+					format: 'dd/mm/yyyy'
+				});
+					$('#date_picker2').datepicker({
+					format: 'dd/mm/yyyy'
+				});
+				$('#date_picker3').datepicker({
+					format: 'dd/mm/yyyy'
+				});
+					$('#date_picker4').datepicker({
+					format: 'dd/mm/yyyy'
+				});
+					$('#date_picker5').datepicker({
+					format: 'dd/mm/yyyy'
+				});
+					$('#date_picker6').datepicker({
+					format: 'dd/mm/yyyy'
+				});
                 //Timepicker
                 $(".timepicker").timepicker({
                     showInputs: false

@@ -140,7 +140,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
-                                            <input type="text" required class="form-control pull-right" id="date_picker1" name="i_joint_date" value="<?= $row->agent_join_date ?>"/>
+                                            <input type="text" required class="form-control pull-right" id="date_picker2" name="i_joint_date" value="<?= $row->agent_join_date ?>"/>
                                         </div><!-- /.input group -->
                                         </div><!-- /.form group -->
                                        
@@ -151,7 +151,7 @@
                                                 <i class="fa fa-calendar"></i>
                                             </div>
                                             
-                                            <input type="text" required class="form-control pull-right" id="date_picker1" name="i_entry_date" value="<?= $row->agent_entry_date ?>"/>
+                                            <input type="text" required class="form-control pull-right" id="date_picker3" name="i_entry_date" value="<?= $row->agent_entry_date ?>"/>
                                         </div><!-- /.input group -->
                                         </div><!-- /.form group -->
                                         
@@ -166,7 +166,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
-                                            <input type="text" required class="form-control pull-right" id="date_picker1" name="i_exam_date" value="<?= $row->agent_exam_date ?>"/>
+                                            <input type="text" required class="form-control pull-right" id="date_picker4" name="i_exam_date" value="<?= $row->agent_exam_date ?>"/>
                                         </div><!-- /.input group -->
                                         </div><!-- /.form group -->
                                         
@@ -214,7 +214,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
-                                            <input type="text" required class="form-control pull-right" id="date_picker1" name="i_file_come_date" value="<?= $row->agent_file_come ?>"/>
+                                            <input type="text" required class="form-control pull-right" id="date_picker5" name="i_file_come_date" value="<?= $row->agent_file_come ?>"/>
                                         </div><!-- /.input group -->
                                         </div><!-- /.form group -->
                                         <div class="form-group">
@@ -223,7 +223,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
-                                            <input type="text" required class="form-control pull-right" id="date_picker1" name="i_file_process_date" value="<?= $row->agent_file_process ?>"/>
+                                            <input type="text" required class="form-control pull-right" id="date_picker6" name="i_file_process_date" value="<?= $row->agent_file_process ?>"/>
                                         </div><!-- /.input group -->
                                         </div><!-- /.form group -->
                                         </div>

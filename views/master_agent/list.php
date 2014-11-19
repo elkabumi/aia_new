@@ -66,9 +66,9 @@
                                         <thead>
                                             <tr>
                                             <th width="5%">No</th>
-                                                <th>Kode Barang </th>
-                                                <th>Nama Barang</th>
-                                                <th>Jumlah Barang</th>
+                                                <th>Kode Agent </th>
+                                                <th>Nama Agent</th>
+                                                <th>Agent Homr city</th>
                                                 <th width="20%">Config</th>
                                             </tr>
                                         </thead>
