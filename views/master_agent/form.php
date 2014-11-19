@@ -65,11 +65,20 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Month </label>
-                                            <input required type="text" name="i_month" class="form-control" placeholder="Enter ..." value="<?= $row->agent_month ?>"/>
+                                              <select class="selectpicker show-tick form-control" data-live-search="true" name="i_office_city">
+                                            <?php
+                                            
+                                            for($i_month=1; $i_month<=12; $i_month++){
+                                            ?>
+                                            <option value="<?= month_name($i_month)?>" <?php if(month_name($i_month) == $row->agent_month){ ?>selected <?php } ?>><?= ucfirst(month_name($i_month))?></option>
+                                            <?php
+                                            }
+                                            ?>
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Kota</label>
-                                           <select class="form-control" name="i_city">
+                                           <select class="selectpicker show-tick form-control" data-live-search="true" name="i_city">
                                             <?php
                                             $query_city = mysql_query("select * from  cities");
                                             while($row_city = mysql_fetch_array($query_city)){
@@ -82,7 +91,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Home City</label>
-                                           <select class="form-control" name="i_home_city">
+                                           <select class="selectpicker show-tick form-control" data-live-search="true" name="i_home_city">
                                             <?php
                                             $query_city = mysql_query("select * from  cities");
                                             while($row_city = mysql_fetch_array($query_city)){
@@ -102,6 +111,7 @@
                                             <label>Tempat Lahir</label>
                                            <textarea class="form-control" name="i_birth_place" rows="3" placeholder="Enter ..."><?= $row->agent_birth_place ?></textarea>
                                         </div>
+                                        
                                         <div class="form-group">
                                         <label>Tanggal Lahir</label>
                                         <div class="input-group">
@@ -114,7 +124,7 @@
                                    
                                          <div class="form-group">
                                             <label>Office city</label>
-                                            <select class="form-control" name="i_office_city">
+                                            <select class="selectpicker show-tick form-control" data-live-search="true" name="i_office_city">
                                             <?php
                                             $query_city = mysql_query("select * from  cities");
                                             while($row_city = mysql_fetch_array($query_city)){
@@ -126,14 +136,17 @@
                                             </select>
                                         </div>
                                         
-                                    
-                                        </div>
-                                    <div class="col-md-6">
-                                    
-                                          <div class="form-group">
+                                         <div class="form-group">
                                             <label>Nama Atasan Langsung</label>
                                             <input required type="text" name="i_leader" class="form-control" placeholder="Enter ..." value="<?= $row->agent_leader ?>"/>
                                         </div>
+                                        
+                                    
+                                        </div>
+                                   	 <div class="col-md-6">
+                                    
+                                         
+                                        
                                         <div class="form-group">
                                         <label>Joint Date</label>
                                         <div class="input-group">
@@ -173,7 +186,7 @@
                                         
                                         <div class="form-group">
                                             <label>Kota Ujian</label>
-                                        <select class="form-control" name="i_exam_city">
+                                        <select class="selectpicker show-tick form-control" data-live-search="true" name="i_exam_city">
                                             <?php
                                             $query_city = mysql_query("select * from  cities");
                                             while($row_city = mysql_fetch_array($query_city)){
@@ -184,6 +197,7 @@
                                             ?>
                                             </select>
                                         </div>
+                                        
                                          <div class="form-group">
                                             <label>Registrasi</label>
                                             <input required type="text" name="i_registrasi" class="form-control" placeholder="Enter ..." value="<?= $row->agent_registration ?>"/>
@@ -193,6 +207,7 @@
                                             <input required type="text" name="i_exam" class="form-control" placeholder="Enter ..." value="<?= $row->agent_exam_status ?>"/>
                                     
                                         </div>
+                                        
                                          <div class="form-group">
                                             <label>Nama Cabang</label>
                                             <input required type="text" name="i_branch" class="form-control" placeholder="Enter ..." value="<?= $row->agent_branch_name ?>"/>
@@ -201,9 +216,10 @@
                                             <label>Dc regional</label>
                                             <input required type="text" name="i_dc" class="form-control" placeholder="Enter ..." value="<?= $row->agent_dc_regional ?>"/>
                                         </div>
+                                        
                                             <div class="form-group">
                                             <label>Clean/Not Clean</label>
-                                     		 <select class="form-control" name="i_status">
+                                     		 <select class="selectpicker show-tick form-control" data-live-search="true" name="i_status">
                                              <?php if($row->agent_active_status == '0' ){
 											 	$select='selected="selected"';
 												$select2='';
@@ -217,6 +233,7 @@
                                       		 <option value="1" <?php echo $select2; ?>>Clean</option>	
                                             </select>
                                         </div>
+                                        
                                          <div class="form-group">
                                         <label>BERKAS DATANG</label>
                                         <div class="input-group">
@@ -226,6 +243,7 @@
                                             <input type="text" required class="form-control pull-right" id="date_picker5" name="i_file_come_date" value="<?= $row->agent_file_come ?>"/>
                                         </div><!-- /.input group -->
                                         </div><!-- /.form group -->
+                                        
                                         <div class="form-group">
                                         <label>BERKAS DIPROSES</label>
                                         <div class="input-group">
@@ -235,7 +253,9 @@
                                             <input type="text" required class="form-control pull-right" id="date_picker6" name="i_file_process_date" value="<?= $row->agent_file_process ?>"/>
                                         </div><!-- /.input group -->
                                         </div><!-- /.form group -->
+                                        
                                         </div>
+                                         <div style="clear:both;"></div>
                                 </div><!-- /.box-body -->
                                 <div class="box-footer">
                                 <input class="btn btn-danger" type="submit" value="Save"/>

@@ -65,6 +65,13 @@ function get_city_code(){
 function edit_city_code(){
 	mysql_query("update counters set city_code = city_code + 1");
 }
+
+function month_name($data){
+	 $month_name = array("", "januari", "februari","maret","april","mei","juni","juli","agustus","september","oktober","november","desember");
+	 return $month_name[$data];
+}
+
+
 function new_date(){
 	$new_date = date("Y-m-d H:m:s");
 	return $new_date;
