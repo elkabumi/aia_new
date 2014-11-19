@@ -44,6 +44,27 @@ function edit_product_code(){
 	mysql_query("update counters set product_code = product_code + 1");
 }
 
+
+function get_city_code(){
+	$query = mysql_query("select city_code from counters");
+	$result = mysql_fetch_array($query);
+	$code = ($result['city_code']) ? $result['city_code'] + 1 : 1;
+	
+	if(strlen($code) == 1){
+		$code = "0000".$code;
+	}else if(strlen($code) == 2){
+		$code = "000".$code;
+	}else if(strlen($code) == 3){
+		$code = "00".$code;
+	}else if(strlen($code) == 4){
+		$code = "0".$code;
+	}
+	
+	return "KT".$code;
+}
+function edit_city_code(){
+	mysql_query("update counters set city_code = city_code + 1");
+}
 function new_date(){
 	$new_date = date("Y-m-d H:m:s");
 	return $new_date;
