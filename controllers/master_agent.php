@@ -65,6 +65,7 @@ switch ($page) {
 			$row->agent_exam_status = false;
 			$row->agent_branch_name = false;
 			$row->agent_dc_regional = false;
+				$row->agent_active_status = false;
 			$row->agent_file_come = false;
 			$row->agent_file_process = false;
 			$action = "master_agent.php?page=save";

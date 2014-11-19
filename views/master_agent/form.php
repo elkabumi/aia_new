@@ -204,8 +204,17 @@
                                             <div class="form-group">
                                             <label>Clean/Not Clean</label>
                                      		 <select class="form-control" name="i_status">
-                                      			<option value="0">Not Clean</option>
-                                      			<option value="1">Clean</option>
+                                             <?php if($row->agent_active_status == '0' ){
+											 	$select='selected="selected"';
+												$select2='';
+											 }else{
+												 $select='';
+											 	$select2='selected="selected"';
+												
+											 }
+											 ?>
+                                      		<option value="0"<?php echo $select; ?> >Not Clean</option>	
+                                      		 <option value="1" <?php echo $select2; ?>>Clean</option>	
                                             </select>
                                         </div>
                                          <div class="form-group">

@@ -69,6 +69,7 @@
                                                 <th>Kode Agent </th>
                                                 <th>Nama Agent</th>
                                                 <th>Agent Home city</th>
+                                                 <th>Clean/Not Clean</th>
                                                 <th width="20%">Config</th>
                                             </tr>
                                         </thead>
