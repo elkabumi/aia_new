@@ -1,11 +1,49 @@
 <?php
 
-function get_event_code(){
-	$query = mysql_query("select event_code from config");
-	$row = mysql_fetch_object($query);
-	$result = $row->event_code + 1;
-	return $result;
+function get_training_code(){
+	$query = mysql_query("select training_code from counters");
+	$result = mysql_fetch_array($query);
+	$code = ($result['training_code']) ? $result['training_code'] + 1 : 1;
+	
+	if(strlen($code) == 1){
+		$code = "0000".$code;
+	}else if(strlen($code) == 2){
+		$code = "000".$code;
+	}else if(strlen($code) == 3){
+		$code = "00".$code;
+	}else if(strlen($code) == 4){
+		$code = "0".$code;
+	}
+	
+	return "TR".$code;
 }
+
+function edit_training_code(){
+	mysql_query("update counters set training_code = training_code + 1");
+}
+
+function get_product_code(){
+	$query = mysql_query("select product_code from counters");
+	$result = mysql_fetch_array($query);
+	$code = ($result['product_code']) ? $result['product_code'] + 1 : 1;
+	
+	if(strlen($code) == 1){
+		$code = "0000".$code;
+	}else if(strlen($code) == 2){
+		$code = "000".$code;
+	}else if(strlen($code) == 3){
+		$code = "00".$code;
+	}else if(strlen($code) == 4){
+		$code = "0".$code;
+	}
+	
+	return "BR".$code;
+}
+
+function edit_product_code(){
+	mysql_query("update counters set product_code = product_code + 1");
+}
+
 function new_date(){
 	$new_date = date("Y-m-d H:m:s");
 	return $new_date;

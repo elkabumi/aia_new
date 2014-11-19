@@ -35,8 +35,10 @@ switch ($page) {
 		
 		} else{
 			
+			$get_code = get_product_code();
+			
 			$row = new stdClass();
-			$row->product_code = false;
+			$row->product_code = $get_code;
 			$row->product_name = false;
 			$row->product_stock = false;
 			$action = "master_barang.php?page=save";
@@ -56,6 +58,7 @@ switch ($page) {
 		$data = "'','$i_code', '$i_name','$i_jumlah'";
 
 		create($data);
+		edit_product_code();
 
 		header('Location: master_barang.php?page=list&did=1');
 

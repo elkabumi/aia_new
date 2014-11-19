@@ -38,6 +38,9 @@ if(!$_SESSION['login']){
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
+        
+         <!-- lookup -->
+      <link rel="stylesheet" type="text/css" href="../css/lookup/bootstrap-select.css">
 
         <!-- jQuery 2.0.2 -->
         <script src="../js/jquery.js"></script>
@@ -61,6 +64,8 @@ if(!$_SESSION['login']){
         <script src="../js/AdminLTE/app.js" type="text/javascript"></script>
          <!-- Datepicker -->
         <script src="../js/plugins/datepicker/bootstrap-datepicker.js"></script>
+        <!-- lookup -->
+         <script type="text/javascript" src="../js/lookup/bootstrap-select.js"></script>
 		
 
     </head>

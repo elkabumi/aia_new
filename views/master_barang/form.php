@@ -46,8 +46,8 @@
                                     
                                         <!-- text input -->
                                         <div class="form-group">
-                                            <label>Code Barang</label>
-                                            <input required type="text" name="i_code" class="form-control" placeholder="Enter ..." value="<?= $row->product_code ?>"/>
+                                            <label>Kode Barang</label>
+                                            <input required type="text" name="i_code" class="form-control" placeholder="Enter ..." value="<?= $row->product_code ?>" readonly="readonly"/>
                                         </div>
                                          <div class="form-group">
                                             <label>Nama Barang</label>

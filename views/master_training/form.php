@@ -46,16 +46,16 @@
                                     
                                         <!-- text input -->
                                         <div class="form-group">
-                                            <label>Kode Trining</label>
-                                            <input required type="text" name="i_code" class="form-control" placeholder="Enter ..." value="<?= $row->training_kode ?>"/>
+                                            <label>Kode Training</label>
+                                            <input required type="text" name="i_code" class="form-control" placeholder="Enter ..." value="<?= $row->training_kode ?>" readonly="readonly"/>
                                         </div>
                                         <div class="form-group">
-                                            <label>Nama Trining</label>
+                                            <label>Nama Training</label>
                                             <input required type="text" name="i_name" class="form-control" placeholder="Enter ..." value="<?= $row->training_name ?>"/>
                                         </div>
                                       	<div class="form-group">
-                                        <label>Kategory Trining</label>
-                                        <select class="form-control" name="i_category_id">
+                                        <label>Kategori Training</label>
+                                        <select class="selectpicker show-tick form-control" data-live-search="true" name="i_category_id">
                                         <?php
                                         $query_city = mysql_query("select * from  training_category");
                                         while($row_city = mysql_fetch_array($query_city)){
@@ -67,15 +67,15 @@
                                         </select>
                                         </div>                                 
            								<div class="form-group">
-                                            <label>Durasi training</label>
+                                            <label>Durasi Training</label>
                                             <input required type="text" name="i_durasi" class="form-control" placeholder="Enter ..." value="<?= $row->training_duration ?>"/>
                                         </div>
                                         <div class="form-group">
-                                            <label>sesi training</label>
+                                            <label>Sesi Training</label>
                                             <input required type="text" name="i_sesi" class="form-control" placeholder="Enter ..." value="<?= $row->training_session ?>"/>
                                         </div>
                                     	<div class="form-group">
-                                            <label>poin persesi</label>
+                                            <label>Poin Persesi</label>
                                             <input required type="text" name="i_poin_sesi" class="form-control" placeholder="Enter ..." value="<?= $row->training_poin_session ?>"/>
                                         </div>
                               

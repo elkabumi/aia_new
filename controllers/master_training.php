@@ -36,7 +36,10 @@ switch ($page) {
 		} else{
 			
 			$row = new stdClass();
-			$row->training_kode = false;
+			
+			$get_code = get_training_code();
+			
+			$row->training_kode = $get_code;
 			$row->training_name = false;
 			$row->training_category_id = false;
 			$row->training_duration = false;
@@ -64,6 +67,7 @@ switch ($page) {
 		$data = "'','$i_code', '$i_name', '$i_category_id', '$i_durasi', '$i_sesi', '$i_poin_sesi'";
 
 		create($data);
+		edit_training_code();
 
 		header('Location: master_training.php?page=list&did=1');
 

@@ -66,10 +66,10 @@
                                         <thead>
                                             <tr>
                                             <th width="5%">No</th>
-                                                <th>Code Training</th>
+                                                <th>Kode Training</th>
                                                 <th>Nama Training</th>
                                               	<th>Durasi Training</th>
-                                                <th>Category Training</th>
+                                                <th>Kategori Training</th>
                                                 <th width="20%">Config</th>
                                             </tr>
                                         </thead>

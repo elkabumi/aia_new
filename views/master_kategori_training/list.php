@@ -66,8 +66,8 @@
                                         <thead>
                                             <tr>
                                             <th width="5%">No</th>
-                                                <th>Title</th>
-                                                <th>Description</th>
+                                               
+                                                <th>Nama Kategori</th>
                                                
                                                 <th width="20%">Config</th>
                                             </tr>
@@ -79,7 +79,7 @@
                                             ?>
                                             <tr>
                                             <td><?= $no ?></td>
-                                                <td><?= $row['training_category_code']?></td>
+                                                
                                                 <td><?= $row['training_category_name']?></td>
                                                
                                                 <td style="text-align:center;">
