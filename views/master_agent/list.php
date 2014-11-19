@@ -68,14 +68,15 @@
                                             <th width="5%">No</th>
                                                 <th>Kode Agent </th>
                                                 <th>Nama Agent</th>
-                                                <th>Agent Homr city</th>
+                                                <th>Agent Home city</th>
                                                 <th width="20%">Config</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                     
+                                     $no =1;
                                             while($row = mysql_fetch_array($query)){
+												
 												if($row{'agent_active_status'}==1){
 													$status='CLEAN';
 												}else{
