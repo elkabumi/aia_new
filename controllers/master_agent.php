@@ -1,6 +1,7 @@
 <?php
 include '../lib/config.php';
 include '../lib/function.php';
+include '../lib/excel_reader.php';
 include '../models/master_agent_model.php';
 
 $page = null;
@@ -16,7 +17,7 @@ switch ($page) {
 		
 		$query = select();
 		$add_button = "master_agent.php?page=form";
-
+		$upload_button = "master_agent.php?page=form_upload";
 
 		include '../views/master_agent/list.php';
 		get_footer();
@@ -65,7 +66,7 @@ switch ($page) {
 			$row->agent_exam_status = false;
 			$row->agent_branch_name = false;
 			$row->agent_dc_regional = false;
-				$row->agent_active_status = false;
+			$row->agent_active_status = false;
 			$row->agent_file_come = false;
 			$row->agent_file_process = false;
 			$action = "master_agent.php?page=save";
@@ -74,7 +75,71 @@ switch ($page) {
 		include '../views/master_agent/form.php';
 		get_footer();
 	break;
+	case 'form_upload';
+		get_header();
+			$close_button = "master_agent.php?page=list";
+			$action = "master_agent.php?page=save_upload";
+			include '../views/master_agent/form_upload.php';
+		get_footer();
+	break;
+	
+	
+	case 'save_upload':
 
+		extract($_POST);
+		$type_file   = $_FILES['file']['type'];
+	
+					$data = new Spreadsheet_Excel_Reader($_FILES['file']['tmp_name']);
+					$hasildata = $data->rowcount($sheet_index=0);
+				for($j=2; $j<=$hasildata; $j++){
+				
+								
+									
+									$nomer_ktp 			= addslashes(trim($data->val($j,2)));  		
+									$kota			 	= addslashes(trim(strtolower($data->val($j,3)))); 		
+									$pic_ars 			= addslashes(trim($data->val($j,4)));		 		 
+									$month				= (trim($data->val($j,5))); 			
+									$kode_agen 			= trim($data->val($j,6)); 			
+									$nama_agen			= addslashes(trim(strtolower($data->val($j,7)))); 			
+									$home_city			= trim(strtolower($data->val($j,8))); 				
+									$no_telp			= trim($data->val($j,9)); 
+									$tempat_lahir		= trim($data->val($j,10)); 	
+									$tgl_lahir			= trim($data->val($j,11)); 
+									$office_city		= trim($data->val($j,12)); 	
+									$nama_atasan		= addslashes(trim(strtolower($data->val($j,13)))); 	
+									$joint_date			= trim(($data->val($j,14))); 
+									$entry_date			= trim(($data->val($j,15)));	
+									$jenis_lisensi		= trim(strtolower($data->val($j,16)));
+									$tgl_ujian			= trim(($data->val($j,17))); 	
+									$kota_ujian			= trim($data->val($j,18));
+									$registrasi			= trim($data->val($j,19));
+									$exam_status		= trim($data->val($j,20)); 
+									$nama_cabang		= trim($data->val($j,21)); 
+									$dc_regional		= trim(strtolower($data->val($j,22)));	
+									$status				= trim($data->val($j,23)); 									
+									$berkas_datang		= trim(($data->val($j,24))); 	
+									$berkas_proses 		= trim(($data->val($j,25))); 	
+									$ses_id		=session_id();
+								if($nomer_ktp != ''){
+									$list = "'','$nomer_ktp', '$kota','$pic_ars','$month','$kode_agen','$nama_agen','$home_city'
+									,'$no_telp', '$tempat_lahir','$tgl_lahir','$office_city','$nama_atasan','$joint_date','$entry_date'
+									,'$jenis_lisensi', '$tgl_ujian','$kota_ujian','$registrasi','$exam_status','$nama_cabang','$dc_regional'
+									,'$status','$berkas_datang','$berkas_proses','$ses_id'";
+									create_tmp($list);	
+								}
+				
+					
+									
+										
+							
+							
+						}
+											
+					
+					
+	//echo"<script> window.location='agent.php?page=agent_list_cek'";
+	break;
+	
 	case 'save':
 
 		extract($_POST);

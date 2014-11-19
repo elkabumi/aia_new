@@ -51,22 +51,12 @@
                              
                             </ul>
                         </li>
-                         <li class="treeview <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 2){ echo "active"; }?>">
-                            <a href="#">
-                                <i class="fa fa-user"></i>
-                                <span>User</span>
-                                <i class="fa fa-angle-left pull-right"></i>
+                        <li>
+                            <a href="admin.php?page=list">
+                                <i class="fa fa-user"></i> <span>User</span> 
                             </a>
-                            <ul class="treeview-menu">
-                                <li><a href="admin.php?page=list"><i class="fa fa-chevron-circle-right"></i> Admin</a></li>
-                                <li><a href="pbd.php?page=list"><i class="fa fa-chevron-circle-right"></i> PBD</a></li>
-                                <li><a href="rdh.php?page=list"><i class="fa fa-chevron-circle-right"></i> RDH</a></li>
-                                <li><a href="trainer.php?page=list"><i class="fa fa-chevron-circle-right"></i> Trainer (ADM)</a></li>
-                                <li><a href="trainer_ext.php?page=list"><i class="fa fa-chevron-circle-right"></i> Trainer External</a></li>
-                                
-                               
-                            </ul>
                         </li>
+                        
                         <? } ?>
                        
                        

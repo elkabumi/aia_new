@@ -65,7 +65,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Month </label>
-                                              <select class="selectpicker show-tick form-control" data-live-search="true" name="i_office_city">
+                                              <select class="form-control" name="i_office_city">
                                             <?php
                                             
                                             for($i_month=1; $i_month<=12; $i_month++){
@@ -78,7 +78,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Kota</label>
-                                           <select class="selectpicker show-tick form-control" data-live-search="true" name="i_city">
+                                           <select class="form-control" name="i_city">
                                             <?php
                                             $query_city = mysql_query("select * from  cities order by city_name");
                                             while($row_city = mysql_fetch_array($query_city)){
@@ -91,7 +91,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Home City</label>
-                                           <select class="selectpicker show-tick form-control" data-live-search="true" name="i_home_city">
+                                           <select class="form-control" name="i_home_city">
                                             <?php
                                             $query_city = mysql_query("select * from  cities order by city_name");
                                             while($row_city = mysql_fetch_array($query_city)){
@@ -124,7 +124,7 @@
                                    
                                          <div class="form-group">
                                             <label>Office city</label>
-                                            <select class="selectpicker show-tick form-control" data-live-search="true" name="i_office_city">
+                                            <select class="form-control" name="i_office_city">
                                             <?php
                                             $query_city = mysql_query("select * from  cities order by city_name");
                                             while($row_city = mysql_fetch_array($query_city)){
@@ -186,7 +186,7 @@
                                         
                                         <div class="form-group">
                                             <label>Kota Ujian</label>
-                                        <select class="selectpicker show-tick form-control" data-live-search="true" name="i_exam_city">
+                                       		 <select class="form-control"  name="i_exam_city">
                                             <?php
                                             $query_city = mysql_query("select * from  cities order by city_name");
                                             while($row_city = mysql_fetch_array($query_city)){
@@ -219,7 +219,7 @@
                                         
                                             <div class="form-group">
                                             <label>Clean/Not Clean</label>
-                                     		 <select class="selectpicker show-tick form-control" data-live-search="true" name="i_status">
+                                     		 <select class="form-control" name="i_status">
                                              <?php if($row->agent_active_status == '0' ){
 											 	$select='selected="selected"';
 												$select2='';

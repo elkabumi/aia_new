@@ -16,6 +16,9 @@ function read_id($id){
 function create($data){
 	mysql_query("insert into agents values(".$data.")");
 }
+function create_tmp($data){
+	mysql_query("insert into agent_tmp values(".$data.")");
+}
 
 function update($data, $id){
 	mysql_query("update agents set ".$data." where agent_id = '$id'");

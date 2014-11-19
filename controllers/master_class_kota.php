@@ -12,13 +12,37 @@ $_SESSION['menu_active'] = 1;
 switch ($page) {
 	case 'list':
 		get_header();
-
 		
-		$query = select();
+		if (isset($_GET['pageno2'])) {
+   			$pageno2 = $_GET['pageno2'];
+		}else {
+   			$pageno2 = 1;
+		}
+		$where = '';
+		if($_GET['search']){
+  			$where = "WHERE city_code like '%".$_GET['search']."%' OR a.city_name like '%".$_GET['search']."%' OR a.city_kuota like '%".$_GET['search'].""; 
+  		}
+	 
+		$count_data = count_data($where);
+		$rows_per_page = 10;
+		$lastpage      = ceil($count_data/$rows_per_page);
+
+		$pageno2 = (int)$pageno2;
+		if ($pageno2 > $lastpage) {
+   			$pageno2 = $lastpage;
+		} 
+		if ($pageno2 < 1) {
+   			$pageno2 = 1;
+		} 
+		$limit = 'LIMIT ' .($pageno2 - 1) * $rows_per_page .',' .$rows_per_page;
+		$query = select($where,$limit);
 		$add_button = "master_class_kota.php?page=form";
-
-
+			
 		include '../views/master_class_kota/list.php';
+	
+		
+		
+
 		get_footer();
 	break;
 	

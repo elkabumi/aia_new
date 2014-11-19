@@ -106,8 +106,9 @@
                                         </tbody>
                                           <tfoot>
                                             <tr>
-                                                <th colspan="4"><a href="<?= $add_button ?>" class="btn btn-danger " >Add</a></th>
-                                              
+                                                <th colspan="4"><a href="<?= $add_button ?>" class="btn btn-danger " >Add</a>
+                                                 <a href="<?= $upload_button ?>" class="btn btn-danger " >Upload</a></th>
+                                    
                                             </tr>
                                         </tfoot>
                                     </table>
