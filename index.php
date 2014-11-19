@@ -1,3 +1,3 @@
 <?php
-header('Location: controllers/training.php');
+header('Location: controllers/master_training.php');
 ?>
