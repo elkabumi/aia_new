@@ -2,7 +2,7 @@
 
 function select(){
 	$query = mysql_query("select *
-						 from training_category");
+						 from training_category order by training_category_id");
 	return $query;
 }
 

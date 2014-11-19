@@ -68,9 +68,11 @@
                                             <th width="5%">No</th>
                                                 <th>Kode Training</th>
                                                 <th>Nama Training</th>
-                                              	<th>Durasi Training</th>
                                                 <th>Kategori Training</th>
-                                                <th width="20%">Config</th>
+                                              	<th>Durasi Training</th>
+                                                <th>Sesi Training</th>
+                                                <th>Poin persesi</th>
+                                                <th width="10%">Config</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -82,8 +84,11 @@
                                             <td><?= $no ?></td>
                                                 <td><?= $row['training_kode']?></td>
                                                 <td><?= $row['training_name']?></td>
-                                                <td><?= $row['training_duration']?></td>
                                                 <td><?= $row['training_category_name']?></td>
+                                                <td><?= $row['training_duration']?></td>
+                                                <td><?= $row['training_session']?></td>
+                                                <td><?= $row['training_poin_session']?></td>
+                                               
                                                 <td style="text-align:center;">
                                            <a href="master_training.php?page=form&id=<?= $row['training_id']?>" class="btn btn-danger" ><i class="fa fa-pencil"></i></a>
                                             <a href="javascript:void(0)" onclick="confirm_delete(<?= $row['training_id']; ?>,'master_training.php?page=delete&id=')" class="btn btn-danger" ><i class="fa fa-trash-o"></i></a>

@@ -45,6 +45,7 @@
                                 <div class="box-body">
                                     
                                         <!-- text input -->
+                                         <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Kode Training</label>
                                             <input required type="text" name="i_code" class="form-control" placeholder="Enter ..." value="<?= $row->training_kode ?>" readonly="readonly"/>
@@ -53,11 +54,13 @@
                                             <label>Nama Training</label>
                                             <input required type="text" name="i_name" class="form-control" placeholder="Enter ..." value="<?= $row->training_name ?>"/>
                                         </div>
+                                        </div>
+                                        <div class="col-md-6">  
                                       	<div class="form-group">
                                         <label>Kategori Training</label>
                                         <select class="selectpicker show-tick form-control" data-live-search="true" name="i_category_id">
                                         <?php
-                                        $query_city = mysql_query("select * from  training_category");
+                                        $query_city = mysql_query("select * from  training_category order by training_category_id");
                                         while($row_city = mysql_fetch_array($query_city)){
                                         ?>
                                         <option value="<?= $row_city['training_category_id']?>" <?php if($row_city['training_category_id'] == $row->training_category_id){ ?>selected <?php } ?>><?= $row_city['training_category_name'] ?></option>
@@ -65,11 +68,15 @@
                                         }
                                         ?>
                                         </select>
-                                        </div>                                 
+                                        </div>     
+                                       
+                                                              
            								<div class="form-group">
                                             <label>Durasi Training</label>
-                                            <input required type="text" name="i_durasi" class="form-control" placeholder="Enter ..." value="<?= $row->training_duration ?>"/>
+                                            <input required type="text" name="i_durasi" class="form-control" placeholder="Enter ..." value="<?= $row->training_duration ?>"/><span class="field_note">* Dalam satuan jam</span>
                                         </div>
+                                        </div>
+                                         <div class="col-md-6">  
                                         <div class="form-group">
                                             <label>Sesi Training</label>
                                             <input required type="text" name="i_sesi" class="form-control" placeholder="Enter ..." value="<?= $row->training_session ?>"/>
@@ -78,7 +85,8 @@
                                             <label>Poin Persesi</label>
                                             <input required type="text" name="i_poin_sesi" class="form-control" placeholder="Enter ..." value="<?= $row->training_poin_session ?>"/>
                                         </div>
-                              
+                              	</div>
+                                <div style="clear:both"></div>
                                       
                                    
                                 </div><!-- /.box-body -->

@@ -66,6 +66,29 @@ function edit_city_code(){
 	mysql_query("update counters set city_code = city_code + 1");
 }
 
+function get_training_category_code(){
+	$query = mysql_query("select training_category_code from counters");
+	$result = mysql_fetch_array($query);
+	$code = ($result['training_category_code']) ? $result['training_category_code'] + 1 : 1;
+	
+	if(strlen($code) == 1){
+		$code = "0000".$code;
+	}else if(strlen($code) == 2){
+		$code = "000".$code;
+	}else if(strlen($code) == 3){
+		$code = "00".$code;
+	}else if(strlen($code) == 4){
+		$code = "0".$code;
+	}
+	
+	return "KT".$code;
+}
+
+function edit_training_category_code(){
+	mysql_query("update counters set training_category_code = training_category_code + 1");
+}
+
+
 function month_name($data){
 	 $month_name = array("", "januari", "februari","maret","april","mei","juni","juli","agustus","september","oktober","november","desember");
 	 return $month_name[$data];
