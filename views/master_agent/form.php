@@ -80,7 +80,7 @@
                                             <label>Kota</label>
                                            <select class="selectpicker show-tick form-control" data-live-search="true" name="i_city">
                                             <?php
-                                            $query_city = mysql_query("select * from  cities");
+                                            $query_city = mysql_query("select * from  cities order by city_name");
                                             while($row_city = mysql_fetch_array($query_city)){
                                             ?>
                                             <option value="<?= $row_city['city_id']?>" <?php if($row_city['city_id'] == $row->city_id){ ?>selected <?php } ?>><?= $row_city['city_name'] ?></option>
@@ -93,7 +93,7 @@
                                             <label>Home City</label>
                                            <select class="selectpicker show-tick form-control" data-live-search="true" name="i_home_city">
                                             <?php
-                                            $query_city = mysql_query("select * from  cities");
+                                            $query_city = mysql_query("select * from  cities order by city_name");
                                             while($row_city = mysql_fetch_array($query_city)){
                                             ?>
                                             <option value="<?= $row_city['city_id']?>" <?php if($row_city['city_id'] == $row-> 	agent_home_city_id){ ?>selected <?php } ?>><?= $row_city['city_name'] ?></option>
@@ -126,7 +126,7 @@
                                             <label>Office city</label>
                                             <select class="selectpicker show-tick form-control" data-live-search="true" name="i_office_city">
                                             <?php
-                                            $query_city = mysql_query("select * from  cities");
+                                            $query_city = mysql_query("select * from  cities order by city_name");
                                             while($row_city = mysql_fetch_array($query_city)){
                                             ?>
                                             <option value="<?= $row_city['city_id']?>" <?php if($row_city['city_id'] == $row-> 	agent_ofice_city_id){ ?>selected <?php } ?>><?= $row_city['city_name'] ?></option>
@@ -188,7 +188,7 @@
                                             <label>Kota Ujian</label>
                                         <select class="selectpicker show-tick form-control" data-live-search="true" name="i_exam_city">
                                             <?php
-                                            $query_city = mysql_query("select * from  cities");
+                                            $query_city = mysql_query("select * from  cities order by city_name");
                                             while($row_city = mysql_fetch_array($query_city)){
                                             ?>
                                             <option value="<?= $row_city['city_id']?>" <?php if($row_city['city_id'] == $row-> 	 	agent_exam_city_id){ ?>selected <?php } ?>><?= $row_city['city_name'] ?></option>
